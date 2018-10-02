@@ -53,8 +53,8 @@ $(function() {
 
     /* TODO: Write a new test suite named "The menu" */
     describe('The menu', function(){
-      var $theBody = document.getElementsByTagName("BODY")[0];
-      var $theButton = document.getElementsByClassName("menu-icon-link")[0];
+      var $theBody = $(document.body);
+      var $theButton = $( ".menu-icon-link");
 
           /* TODO: Write a test that ensures the menu element is
           * hidden by default. You'll have to analyze the HTML and
@@ -62,7 +62,7 @@ $(function() {
           * hiding/showing of the menu element.
           */
           it('is the menu hidden by default ?', function(){
-            expect($theBody.classList[0] === "menu-hidden").toBe(true);
+            expect($theBody.hasClass("menu-hidden")).toBe(true);
           })
           /* TODO: Write a test that ensures the menu changes
             * visibility when the menu icon is clicked. This test
@@ -70,11 +70,11 @@ $(function() {
             * clicked and does it hide when clicked again.
             */
             it('menu appears / hides when clicked', function(){
-              document.getElementsByClassName("menu-icon-link")[0].click();
-              expect($theBody.classList[0] === "menu-hidden").not.toBe(true);
+              $theButton.click();
+              expect($theBody.hasClass("menu-hidden")).not.toBe(true);
 
-              document.getElementsByClassName("menu-icon-link")[0].click();
-              expect($theBody.classList[0] === "menu-hidden").toBe(true);
+              $theButton.click();
+              expect($theBody.hasClass("menu-hidden")).toBe(true);
             })
           });
 
