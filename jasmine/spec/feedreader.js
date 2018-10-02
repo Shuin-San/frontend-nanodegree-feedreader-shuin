@@ -91,13 +91,13 @@ $(function() {
          */
       beforeEach(function(done) {
         loadFeed(0, function(){
-          $theFeed = document.getElementsByClassName("feed")[0].childNodes;
+          $theFeed = $('.feed.entry');
           done();
         });
       })
 
       it('Loads at least one post ?', function(){
-        expect($theFeed[0]).toBeDefined();
+        expect($theFeed).toBeDefined();
       })
     });
 
